@@ -4,11 +4,11 @@
 body {
   --type-first: Arial, Helvetica, sans-serif;
   font-family: var(--type-first);
-  /* padding: 0 20rem; */
 }
 a {
   color: #333;
 }
 .container {
   max-width: 50rem;
+  padding: 6.5rem 10rem;
 }
