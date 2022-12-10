@@ -4,11 +4,26 @@
 body {
   --type-first: Arial, Helvetica, sans-serif;
   font-family: var(--type-first);
+  font-size: 1rem;
+  margin-top: 6rem;
 }
 a {
   color: #333;
+  text-decoration: none;
 }
 .container {
   max-width: 50rem;
-  padding: 6.5rem 10rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+.animeLeft {
+  opacity: 0;
+  margin-left: -2rem;
+  animation: animeLeft 0.3s forwards;
+}
+@keyframes animeLeft {
+  to {
+    opacity: initial;
+    margin-left: initial;
+  }
 }
