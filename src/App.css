@@ -39,4 +39,8 @@ button {
   cursor: pointer;
   border-radius: 1.2rem;
   overflow: hidden;
+  transition: 0.3s;
+}
+button:hover {
+  background: blue;
 }
