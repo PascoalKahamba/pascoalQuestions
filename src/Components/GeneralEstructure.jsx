@@ -1,6 +1,14 @@
 import React from "react";
 
-const GeneralEstructure = ({ question, options, value, onChange, id }) => {
+const GeneralEstructure = ({
+  question,
+  options,
+  value,
+  onChange,
+  id,
+  active,
+}) => {
+  console.log(active);
   return (
     <section className="container">
       <h1>{question}</h1>

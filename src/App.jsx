@@ -40,14 +40,16 @@ function App() {
     p3: "",
     p4: "",
   });
+  const [slides, setSlides] = useState(0);
   function handleClick({ target }) {
     SetReplys({ ...replys, [target.id]: target.value });
   }
   return (
     <form className="App">
-      {questions.map((question) => (
+      {questions.map((question, index) => (
         <GeneralEstructure
           {...question}
+          active={slides === index}
           key={question.id}
           onChange={handleClick}
           value={replys[question.id]}
