@@ -41,8 +41,12 @@ function App() {
     p4: "",
   });
   const [slides, setSlides] = useState(0);
-  function handleClick({ target }) {
+  function handleChange({ target }) {
     SetReplys({ ...replys, [target.id]: target.value });
+  }
+  function handleClick(event) {
+    event.preventDefault();
+    setSlides(slides + 1);
   }
   return (
     <form className="App">
@@ -51,11 +55,11 @@ function App() {
           {...question}
           active={slides === index}
           key={question.id}
-          onChange={handleClick}
+          onChange={handleChange}
           value={replys[question.id]}
         />
       ))}
-      <button>Proximo</button>
+      <button onClick={handleClick}>Proximo</button>
     </form>
   );
 }
