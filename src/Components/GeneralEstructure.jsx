@@ -1,25 +1,16 @@
 import React from "react";
 import { useState } from "react";
 
-const questions = [
-  {
-    question: "Quem fez este aplicativo? ",
-    reply: "Pascoal Kahamba",
-    reply: "Francisco Fetapi",
-    reply: "Adriano Ngunga",
-    reply: "Feliciano Ndumbo",
-  },
-];
-const GeneralEstructure = () => {
+const GeneralEstructure = ({ question, options }) => {
   return (
-    <div className="generalClass">
-      {questions.map(({ question, reply }) => (
-        <div key={question}>
-          <h1>{question}</h1>
-          <p>{reply}</p>
-        </div>
+    <section className="generalClass">
+      <h1>{question}</h1>
+      {options.map((item) => (
+        <ul key={item}>
+          <li>{item}</li>
+        </ul>
       ))}
-    </div>
+    </section>
   );
 };
 

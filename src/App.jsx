@@ -1,5 +1,7 @@
 import React from "react";
+import { useState } from "react";
 import "./App.css";
+import GeneralEstructure from "./Components/GeneralEstructure";
 const questions = [
   {
     question: "Quem fez este aplicativo? ",
@@ -32,19 +34,18 @@ const questions = [
   },
 ];
 function App() {
+  const [replys, SetReplys] = useState({
+    p1: "",
+    p2: "",
+    p3: "",
+    p4: "",
+  });
   return (
-    <div className="App generalClass">
-      {questions.map(({ question, options, reply, id }) => (
-        <div key={id}>
-          <h1>{question}</h1>
-          {options.map((item) => (
-            <ul key={item}>
-              <li>{item}</li>
-            </ul>
-          ))}
-        </div>
+    <section className="App">
+      {questions.map((question) => (
+        <GeneralEstructure {...question} key={question.id} />
       ))}
-    </div>
+    </section>
   );
 }
 
