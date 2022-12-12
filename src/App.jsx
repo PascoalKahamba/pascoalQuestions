@@ -44,9 +44,16 @@ function App() {
   function handleChange({ target }) {
     SetReplys({ ...replys, [target.id]: target.value });
   }
+  function result() {
+    console.log("event");
+  }
   function handleClick(event) {
     event.preventDefault();
-    setSlides(slides + 1);
+    if (slides < questions.length) {
+      setSlides(slides + 1);
+    } else {
+      result();
+    }
   }
   return (
     <form className="App">

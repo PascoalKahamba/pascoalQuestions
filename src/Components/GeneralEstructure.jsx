@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 
 const GeneralEstructure = ({
   question,
@@ -8,7 +9,6 @@ const GeneralEstructure = ({
   id,
   active,
 }) => {
-  console.log(active);
   if (active === true)
     return (
       <section className="container">
