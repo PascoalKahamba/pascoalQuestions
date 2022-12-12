@@ -2,8 +2,8 @@ import React from "react";
 
 const GeneralEstructure = ({ question, options, value, onChange, id }) => {
   return (
-    <fieldset className="container">
-      <legend>{question}</legend>
+    <section className="container">
+      <h1>{question}</h1>
       {options.map((option) => (
         <label key={option} className="children">
           <input
@@ -14,9 +14,10 @@ const GeneralEstructure = ({ question, options, value, onChange, id }) => {
             id={id}
           />
           {option}
+          <br />
         </label>
       ))}
-    </fieldset>
+    </section>
   );
 };
 
