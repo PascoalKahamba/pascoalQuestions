@@ -1,16 +1,22 @@
 import React from "react";
-import { useState } from "react";
 
-const GeneralEstructure = ({ question, options }) => {
+const GeneralEstructure = ({ question, options, value, onChange, id }) => {
   return (
-    <section className="generalClass">
-      <h1>{question}</h1>
-      {options.map((item) => (
-        <ul key={item}>
-          <li>{item}</li>
-        </ul>
+    <fieldset className="container">
+      <legend>{question}</legend>
+      {options.map((option) => (
+        <label key={option} className="children">
+          <input
+            type="radio"
+            value={option}
+            checked={value === option}
+            onChange={onChange}
+            id={id}
+          />
+          {option}
+        </label>
       ))}
-    </section>
+    </fieldset>
   );
 };
 

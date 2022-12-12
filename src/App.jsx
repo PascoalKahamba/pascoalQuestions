@@ -15,9 +15,9 @@ const questions = [
     id: "p1",
   },
   {
-    question: "Quantas provincias tem Angola? ",
-    options: [20, 16, 18, 11],
-    reply: 18,
+    question: "Quais destes países faz parte do continente Africano? ",
+    options: ["Argentina", "Angola", "Rússia", "Canada"],
+    reply: "Angola",
     id: "p2",
   },
   {
@@ -27,9 +27,9 @@ const questions = [
     id: "p3",
   },
   {
-    question: "Quantas faculdades tem a provincia de Benguela? ",
-    options: [5, 3, 12, 1],
-    reply: 1,
+    question: "Qual é a provincia de Angola? ",
+    options: ["Luanda", "Lubango", "Huambo", "Bie"],
+    reply: "Luanda",
     id: "p4",
   },
 ];
@@ -40,12 +40,21 @@ function App() {
     p3: "",
     p4: "",
   });
+  function handleClick({ target }) {
+    SetReplys({ ...replys, [target.id]: target.value });
+  }
   return (
-    <section className="App">
+    <form className="App">
       {questions.map((question) => (
-        <GeneralEstructure {...question} key={question.id} />
+        <GeneralEstructure
+          {...question}
+          key={question.id}
+          onChange={handleClick}
+          value={replys[question.id]}
+        />
       ))}
-    </section>
+      <button>Proximo</button>
+    </form>
   );
 }
 
