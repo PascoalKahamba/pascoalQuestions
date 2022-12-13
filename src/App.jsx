@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "./App.css";
 import GeneralEstructure from "./Components/GeneralEstructure";
+import ShowsResult from "./Components/ShowsResult";
 const questions = [
   {
     question: "Qual método é utilizado para criar componentes? ",
@@ -45,15 +46,15 @@ function App() {
   });
   const [slides, setSlides] = useState(0);
   const [result, setResult] = useState(null);
-  const currects = questions.filter(({ reply, id }) => replys[id] === reply);
+  const corrects = questions.filter(({ reply, id }) => replys[id] === reply);
   const incorrects = questions.filter(({ reply, id }) => replys[id] !== reply);
 
   function handleChange({ target }) {
     SetReplys({ ...replys, [target.id]: target.value });
   }
   function EndResult() {
-    setResult(`Você acertou: ${currects.length} de ${questions.length}`);
-    console.log(currects);
+    setResult(`Você acertou: ${corrects.length} de ${questions.length}`);
+    console.log(corrects);
   }
   function handleClick(event) {
     event.preventDefault();
@@ -77,7 +78,10 @@ function App() {
         />
       ))}
       {result ? (
-        <p>{result}</p>
+        <>
+          <p>{result}</p>
+          <ShowsResult incorrects={incorrects} corrects={corrects} />
+        </>
       ) : (
         <button onClick={handleClick}>Proximo</button>
       )}
