@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "./App.css";
 import GeneralEstructure from "./Components/GeneralEstructure";
-import ShowsResult from "./Components/ShowsResult";
+import ShowsIncorrectsResult from "./Components/ShowsIncorrectsResult";
 const questions = [
   {
     question: "Qual método é utilizado para criar componentes? ",
@@ -79,8 +79,12 @@ function App() {
       ))}
       {result ? (
         <>
-          <p>{result}</p>
-          <ShowsResult incorrects={incorrects} corrects={corrects} />
+          <p className="totalCorrects">{result}</p>
+          <ShowsIncorrectsResult
+            incorrects={incorrects}
+            corrects={corrects}
+            questions={questions}
+          />
         </>
       ) : (
         <button onClick={handleClick}>Proximo</button>
