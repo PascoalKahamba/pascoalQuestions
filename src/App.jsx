@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "./App.css";
 import GeneralEstructure from "./Components/GeneralEstructure";
+import ShowsCorrectsResult from "./Components/ShowsCorrectsResult";
 import ShowsIncorrectsResult from "./Components/ShowsIncorrectsResult";
 const questions = [
   {
@@ -80,14 +81,18 @@ function App() {
       {result ? (
         <>
           <p className="totalCorrects">{result}</p>
-          <ShowsIncorrectsResult
-            incorrects={incorrects}
-            corrects={corrects}
-            questions={questions}
-          />
+
+          {corrects.length !== questions.length && (
+            <>
+              {corrects.length > 0 && (
+                <ShowsCorrectsResult corrects={corrects} />
+              )}
+              <ShowsIncorrectsResult incorrects={incorrects} />
+            </>
+          )}
         </>
       ) : (
-        <button onClick={handleClick}>Proximo</button>
+        <button onClick={handleClick}>Próximo</button>
       )}
     </form>
   );
