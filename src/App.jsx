@@ -45,12 +45,13 @@ function App() {
   });
   const [slides, setSlides] = useState(0);
   const [result, setResult] = useState(null);
+  const currects = questions.filter(({ reply, id }) => replys[id] === reply);
+  const incorrects = questions.filter(({ reply, id }) => replys[id] !== reply);
 
   function handleChange({ target }) {
     SetReplys({ ...replys, [target.id]: target.value });
   }
   function EndResult() {
-    const currects = questions.filter(({ reply, id }) => replys[id] === reply);
     setResult(`Você acertou: ${currects.length} de ${questions.length}`);
     console.log(currects);
   }
