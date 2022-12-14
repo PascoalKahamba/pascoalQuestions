@@ -72,6 +72,7 @@ function App() {
       {questions.map((question, index) => (
         <GeneralEstructure
           {...question}
+          corrects={corrects}
           active={slides === index}
           key={question.id}
           onChange={handleChange}
