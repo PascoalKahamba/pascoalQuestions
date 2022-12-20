@@ -4,8 +4,8 @@ Este `projeto` foi desenvolvido com `React` para fim de melhorar ainda mas as mi
 
 O projeto mostra assim que usuário escolher a optição que achar correta o sistema vai pintar na optição correta com color verde e a incorreta com vermelha e no final que usuário ter respondido todas as perguntas o programa vai `mostrar` todas as `informações` especialmente quantas perguntas o usuário acertor e errou.
 
-![foto Problema](/dist/photo.PNG)
-![foto solução](/dist/photo1.PNG)
+![foto Problema](./src/pictures/photo.PNG)
+![foto solução](./src/pictures/photos.PNG)
 
 ## Tecnologias
 
